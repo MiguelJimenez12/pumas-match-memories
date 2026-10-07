@@ -1,0 +1,27 @@
+# Personal records and uploaded media
+/data/
+*.sqlite
+*.sqlite-*
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Dependencies, caches and generated output
+node_modules/
+coverage/
+.cache/
+.tmp/
+tmp/
+dist/
+*.log
+npm-debug.log*
+
+# Editor and operating system files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+Desktop.ini
