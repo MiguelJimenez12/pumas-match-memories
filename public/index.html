@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071b35">
+  <meta name="description" content="Un álbum personal para conservar mis recuerdos con Pumas UNAM.">
+  <title>Mis recuerdos con Pumas</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/app.css?v=2">
+</head>
+<body>
+  <svg class="icon-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-timeline" viewBox="0 0 24 24"><path d="M6 3v18M6 7h13M6 17h13"/><circle cx="6" cy="7" r="2"/><circle cx="6" cy="17" r="2"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m3 17 5-5 4 4 3-3 6 5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="m4 20 4.5-1 11-11a2 2 0 0 0-3-3l-11 11L4 20ZM14 7l3 3"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6M14 11v6"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 16v4h16v-4"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+  </svg>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark" aria-hidden="true">P</div><div><strong>PUMAS</strong><span>MI ÁLBUM</span></div></div>
+      <div class="sidebar-rule"></div>
+      <div class="nav-caption">EXPLORAR</div>
+      <nav class="side-nav" aria-label="Navegación principal">
+        <button class="nav-item active" data-page="memories"><svg><use href="#i-grid"/></svg><span>Mis recuerdos</span></button>
+        <button class="nav-item" data-page="history"><svg><use href="#i-timeline"/></svg><span>Mi historia</span></button>
+      </nav>
+      <div class="sidebar-bottom"><div class="gold-rule"></div><p>Un lugar para guardar cada grito, cada abrazo y cada partido.</p><span>HECHO PARA RECORDAR</span></div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><div class="mobile-brand"><span class="mobile-brand-mark">P</span> PUMAS <small>MI ÁLBUM</small></div><div class="topbar-right"><span class="topbar-label">ARCHIVO PERSONAL</span><span class="topbar-dot"></span><span id="todayLabel"></span></div></header>
+      <section id="memoriesPage" class="page active" aria-labelledby="pageTitle">
+        <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> EL ÁLBUM</div><h1 id="pageTitle">Mis recuerdos <em>con Pumas.</em></h1><p>Los partidos pasan. Lo que vivimos se queda.</p></div><button id="newMemoryButton" class="primary-button"><svg><use href="#i-plus"/></svg> Nuevo recuerdo</button></div>
+        <div class="toolbar"><div class="search-wrap"><svg><use href="#i-search"/></svg><input id="searchInput" type="search" placeholder="Buscar entre tus recuerdos" aria-label="Buscar por título o descripción"></div><div class="view-switch" role="group" aria-label="Vista de recuerdos"><button id="gridButton" class="active" aria-label="Ver galería" title="Galería"><svg><use href="#i-grid"/></svg></button><button id="timelineButton" aria-label="Ver línea del tiempo" title="Línea del tiempo"><svg><use href="#i-timeline"/></svg></button></div></div>
+        <div class="filters"><div class="filter-label"><svg><use href="#i-sliders"/></svg> FILTRAR POR</div><select id="yearFilter" aria-label="Filtrar por año"><option value="">Todos los años</option></select><input id="dateFilter" type="date" aria-label="Filtrar por fecha exacta" title="Fecha exacta"><select id="opponentFilter" aria-label="Filtrar por rival"><option value="">Todos los rivales</option></select><select id="locationFilter" aria-label="Filtrar por lugar"><option value="">Estadio y casa</option><option value="stadium">En el estadio</option><option value="home">Desde casa</option></select><select id="resultFilter" aria-label="Filtrar por resultado"><option value="">Todos los resultados</option><option value="win">Victoria</option><option value="draw">Empate</option><option value="loss">Derrota</option><option value="pending">Sin marcador</option></select><button id="clearFilters" class="text-button hidden">Limpiar filtros</button></div>
+        <div class="section-line"><div><h2 id="listHeading">Todos los recuerdos</h2><span id="memoryCount">0 momentos guardados</span></div><span class="section-ornament" aria-hidden="true">◆</span></div>
+        <div id="loadingState" class="loading-state">Cargando recuerdos…</div>
+        <div id="emptyState" class="empty-state hidden"><div class="empty-photo"><div class="empty-photo-overlay"><span>DÍAS DE PARTIDO</span><strong>La historia empieza<br>con un recuerdo.</strong></div></div><div class="empty-copy"><div class="empty-kicker">TU ÁLBUM TE ESPERA</div><h3>Cada partido tiene una historia.</h3><p>Guarda las fotos, videos y emociones de ese día para volver a vivirlos cuando quieras.</p><button id="emptyCreateButton" class="primary-button"><svg><use href="#i-plus"/></svg> Guardar mi primer recuerdo</button></div></div>
+        <div id="noResults" class="no-results hidden"><div class="no-results-icon"><svg><use href="#i-search"/></svg></div><h3>No encontramos recuerdos</h3><p>Prueba con otra búsqueda o cambia los filtros.</p><button id="noResultsClear" class="outline-button">Limpiar filtros</button></div>
+        <div id="memoryList" class="memory-list grid-view"></div>
+      </section>
+      <section id="historyPage" class="page" aria-labelledby="historyTitle"><div class="page-heading history-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> TU RECORRIDO</div><h1 id="historyTitle">Mi historia <em>con Pumas.</em></h1><p>Cada número guarda un momento vivido.</p></div></div><div id="historyContent"></div></section>
+      <footer class="app-footer"><span>PUMAS UNAM · MI ÁLBUM PERSONAL</span><span>HECHO DE MOMENTOS, NO DE RESULTADOS</span></footer>
+    </main>
+  </div>
+  <nav class="mobile-nav" aria-label="Navegación móvil"><button class="active" data-page="memories"><svg><use href="#i-grid"/></svg><span>Recuerdos</span></button><button data-page="history"><svg><use href="#i-timeline"/></svg><span>Mi historia</span></button><button id="mobileNew"><svg><use href="#i-plus"/></svg><span>Nuevo</span></button></nav>
+  <dialog id="editorDialog" class="modal editor-modal"><form id="memoryForm" novalidate><div class="modal-header"><div><span class="modal-eyebrow">UN MOMENTO PARA SIEMPRE</span><h2 id="editorTitle">Nuevo recuerdo</h2></div><button type="button" class="icon-button" data-close="editorDialog" aria-label="Cerrar"><svg><use href="#i-close"/></svg></button></div><div class="modal-scroll"><div class="form-grid"><label class="field full">Título del recuerdo <span>*</span><input id="titleInput" maxlength="150" required placeholder="Una tarde inolvidable en CU"></label><label class="field">Fecha del partido <span>*</span><input id="dateInput" type="date" required></label><label class="field">Equipo rival <span>*</span><input id="opponentInput" maxlength="100" required placeholder="¿Contra quién jugó Pumas?"></label><fieldset class="location-field"><legend>¿Dónde lo viviste? <span>*</span></legend><label><input type="radio" name="location" value="stadium" checked><span><svg><use href="#i-pin"/></svg> En el estadio</span></label><label><input type="radio" name="location" value="home"><span>⌂ &nbsp; Desde casa</span></label></fieldset><div class="score-field"><label>Marcador <small>OPCIONAL</small></label><div class="score-inputs"><span>PUMAS</span><input id="pumasScore" type="number" min="0" max="99" inputmode="numeric" aria-label="Goles de Pumas" placeholder="—"><b>:</b><input id="rivalScore" type="number" min="0" max="99" inputmode="numeric" aria-label="Goles del rival" placeholder="—"><span>RIVAL</span></div></div><label class="field full">Tu historia<textarea id="descriptionInput" rows="4" maxlength="10000" placeholder="¿Qué hizo especial este partido? Cuenta lo que recuerdas…"></textarea></label></div><div class="media-section"><div class="media-heading"><div><h3>Fotos y videos</h3><p>JPG, PNG, WEBP, MP4 o MOV. Puedes seleccionar varios a la vez.</p></div><span id="mediaCount">0 archivos</span></div><label id="dropZone" class="drop-zone"><input id="fileInput" type="file" accept=".jpg,.jpeg,.png,.webp,.mp4,.mov,image/jpeg,image/png,image/webp,video/mp4,video/quicktime" multiple><svg><use href="#i-upload"/></svg><strong>Arrastra tus archivos aquí</strong><span>o haz clic para seleccionarlos</span></label><div id="mediaEditorList" class="media-editor-list"></div><div class="media-hint">Elige la portada con la estrella. Usa las flechas para ordenar fotos y videos.</div></div></div><div class="modal-footer"><span id="saveProgress" class="save-progress" role="status"></span><div><button type="button" class="outline-button" data-close="editorDialog">Cancelar</button><button id="saveButton" type="submit" class="primary-button">Guardar recuerdo</button></div></div></form></dialog>
+  <dialog id="detailDialog" class="modal detail-modal"><div class="detail-header"><button id="detailBack" class="back-button"><svg><use href="#i-back"/></svg> Volver al álbum</button><div class="detail-actions"><button id="editMemory" class="icon-button" aria-label="Editar recuerdo" title="Editar"><svg><use href="#i-edit"/></svg></button><button id="deleteMemory" class="icon-button danger-icon" aria-label="Eliminar recuerdo" title="Eliminar"><svg><use href="#i-trash"/></svg></button><button class="icon-button" data-close="detailDialog" aria-label="Cerrar"><svg><use href="#i-close"/></svg></button></div></div><div id="detailBody"></div></dialog>
+  <dialog id="confirmDialog" class="modal confirm-modal"><div class="confirm-icon"><svg><use href="#i-trash"/></svg></div><h2 id="confirmTitle">¿Eliminar este recuerdo?</h2><p id="confirmText">Se borrarán también sus fotografías y videos. Esta acción no se puede deshacer.</p><div class="confirm-actions"><button id="cancelDelete" class="outline-button">Cancelar</button><button id="confirmDelete" class="danger-button">Eliminar recuerdo</button></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js?v=2" type="module"></script>
+</body>
+</html>
